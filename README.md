@@ -17,7 +17,7 @@ We aim to use SVD based low rank approximation (using r=8, r=16 and r=32) of the
 
 ### Graphs Analysis
 
-The `graphs` folder contains the iteration vs error (primal and residual) graphs for three types of ADMM:
+The `SVD graphs` folder contains the iteration vs error (primal and residual) graphs for three types of ADMM:
 
 1. **Basic ADMM**
 2. **Accelerated ADMM**
