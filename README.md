@@ -1,14 +1,14 @@
 # FPGA-ADMM-analysis
 
 In ADMM (Alternating Direction Method of Multipliers), we update variables u, v, and λ iteratively. A key computational challenge arises during the u-update
-u^{k+1}={(Q+\tau A^TA)}^{-1}(A^T(\lambda^k+\tau v^k)-q)
+![Screenshot](./Screenshot%202025-03-22%20183506.png)
 which involves matrix inversion and multiplication. This process can be computationally expensive, especially when dealing with the cached inverse matrix (the inverse term) of large dimensions.
 
 Matrix multiplication has a computational cost proportional to the size of the matrices. For two matrices of dimensions m×n and n×p, the number of operations required is:
 Operations =m*n*p
 
 The goal is to reduce the number of computations during the u-update step by using low-rank approximations via Singular Value Decomposition (SVD). The Singular Value Decomposition (SVD) allows you to approximate a matrix by breaking it into three components:
-M=U\Sigma V^T
+![Screenshot](./Screenshot%202025-03-22%20183604.png)
 By retaining only the top r singular values (with r<50), we can approximate the inverse matrix and reduce the number of operations required for matrix multiplication. This reduces the computational cost while maintaining acceptable accuracy.
 
 The cached inverse matrix is of dimensions 50x50 and the remainder of the update equation results in a matrix of dimension 50x1. Following the earlier formula for calculating number of operations , the no. of operations without any low-rank approximation (r=50) is:
