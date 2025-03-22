@@ -31,9 +31,3 @@ For each type of ADMM, the convergence behavior is compared under four scenarios
 4. Cached inverse matrix with low-rank approximation (\(r = 32\)).
 
 These graphs allow us to analyze the trade-off between computational complexity and convergence accuracy.
-
-
-# FPGA-ADMM-Analysis
-
-
-
